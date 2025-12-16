@@ -150,7 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Request form
   const requestForm = document.getElementById('requestForm');
+  console.log('Request form element:', requestForm);
   if (requestForm) {
+    console.log('Request form event listener added');
     requestForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       

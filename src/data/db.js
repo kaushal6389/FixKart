@@ -17,11 +17,22 @@ const defaultExperts = [
   {"id":12,"name":"Sunita Nair","category":"Electronics","city":"Coimbatore, Tamil Nadu","rating":4.8,"rate":"₹650–950/hr","experience":"12+ years","bio":"Electronics technician specializing in TV repairs, home theatre systems, gaming consoles, and electronic gadget servicing."}
 ];
 
+const defaultRequests = [
+  {"id":1734691442277,"title":"Electrical Service Required","description":"Need urgent electrical wiring work for new 3BHK flat. Complete rewiring needed including switchboard installation and lighting fixtures.","location":"Andheri West, Mumbai","category":"Electrical","budget":"₹25,000","email":"raj.patel@email.com","status":"pending","createdAt":"2025-12-10T10:30:00.000Z"},
+  {"id":1734737888519,"title":"Plumbing Service Required","description":"Kitchen sink and bathroom pipes need repair. Water leakage issue in main pipeline. Need experienced plumber.","location":"Sector 18, Noida","category":"Plumbing","budget":"₹8,000","email":"amit.sharma@email.com","status":"pending","createdAt":"2025-12-11T14:20:00.000Z"},
+  {"id":1734800000000,"title":"AC Repair Service Required","description":"Split AC not cooling properly. Compressor making noise. Need technician for inspection and repair.","location":"Koramangala, Bangalore","category":"Appliance","budget":"₹5,000","email":"priya.reddy@email.com","status":"pending","createdAt":"2025-12-12T09:15:00.000Z"}
+];
+
+const defaultHires = [
+  {"id":1734897579657,"expertId":1,"expertName":"Rajesh Kumar","customerName":"Amit Verma","phone":"9876543210","location":"Andheri West, Mumbai","requirement":"Complete electrical wiring for 3BHK flat including switchboard and lighting fixtures installation.","serviceType":"Electrical","status":"completed","createdAt":"2025-12-10T12:30:00.000Z"},
+  {"id":1734897680000,"expertId":3,"expertName":"Suresh Reddy","customerName":"Neha Sharma","phone":"9988776655","location":"Koramangala, Bangalore","requirement":"Bathroom waterproofing and wall tile repair work needed urgently.","serviceType":"Civil","status":"in-progress","createdAt":"2025-12-12T14:00:00.000Z"}
+];
+
 // In-memory storage for deployment (Vercel is read-only)
 let inMemoryStorage = {
   'experts.json': defaultExperts,
-  'requests.json': [],
-  'hires.json': [],
+  'requests.json': defaultRequests,
+  'hires.json': defaultHires,
   'users.json': []
 };
 
