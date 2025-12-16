@@ -2,7 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 // In-memory storage for deployment (Vercel is read-only)
-let inMemoryStorage = {};
+let inMemoryStorage = {
+  'experts.json': require('./experts.json'),
+  'requests.json': require('./requests.json'),
+  'hires.json': require('./hires.json'),
+  'users.json': require('./users.json')
+};
 
 function readJson(file) {
   const filePath = path.join(__dirname, file);
