@@ -158,10 +158,29 @@ document.addEventListener('DOMContentLoaded', () => {
       
       console.log('Request form submitted');
       
-      const serviceType = document.getElementById('serviceType').value;
-      const description = document.getElementById('projectDescription').value.trim();
-      const location = document.getElementById('userLocation').value.trim();
-      const email = document.getElementById('userEmail').value.trim();
+      const serviceTypeEl = document.getElementById('serviceType');
+      const descriptionEl = document.getElementById('projectDescription');
+      const locationEl = document.getElementById('userLocation');
+      const emailEl = document.getElementById('userEmail');
+      const budgetEl = document.getElementById('userBudget');
+      
+      console.log('Elements found:', {
+        serviceType: serviceTypeEl,
+        description: descriptionEl,
+        location: locationEl,
+        email: emailEl,
+        budget: budgetEl
+      });
+      
+      if (!serviceTypeEl || !descriptionEl || !locationEl || !emailEl) {
+        alert('⚠️ Form elements not found. Please try again.');
+        return;
+      }
+      
+      const serviceType = serviceTypeEl.value;
+      const description = descriptionEl.value.trim();
+      const location = locationEl.value.trim();
+      const email = emailEl.value.trim();
       
       console.log('Form values:', { serviceType, description, location, email });
       
