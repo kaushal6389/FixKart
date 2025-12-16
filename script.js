@@ -154,10 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
     requestForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
+      console.log('Request form submitted');
+      
       const serviceType = document.getElementById('serviceType').value;
       const description = document.getElementById('projectDescription').value.trim();
       const location = document.getElementById('userLocation').value.trim();
       const email = document.getElementById('userEmail').value.trim();
+      
+      console.log('Form values:', { serviceType, description, location, email });
       
       // Validation
       if (!serviceType) {
@@ -189,20 +193,27 @@ document.addEventListener('DOMContentLoaded', () => {
         email: email
       };
       
+      console.log('Request data:', requestData);
+      
       const submitBtn = e.target.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Posting Request...';
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Posting...';
       submitBtn.disabled = true;
       
       try {
+        console.log('Sending request to /api/requests');
         const response = await fetch('/api/requests', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(requestData)
         });
+        
+        console.log('Response status:', response.status);
         const data = await response.json();
-        if (response.ok) {
-          alert(`✅ Request Posted Successfully!\n\nRequest ID: ${data.id}\n\nExperts will start sending quotes shortly. Check your email for updates.`);
+        console.log('Response data:', data);
+        
+        if (response.ok && data.success) {
+          alert(`✅ Request Posted Successfully!\n\nRequest ID: ${data.request?.id || 'Pending'}\n\nExperts will start sending quotes shortly. Check your email for updates.`);
           closeModal('postRequestSection');
           requestForm.reset();
         } else {
@@ -210,9 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (error) {
         console.error('Request error:', error);
-        alert('❌ Network error. Please check your connection and try again.');
+        alert('❌ Network error: ' + error.message + '\n\nPlease check your connection and try again.');
       } finally {
-        submitBtn.textContent = originalText;
+        submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
       }
     });
