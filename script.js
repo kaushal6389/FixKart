@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: serviceType,
         description: description,
         location: location,
-        budget: document.getElementById('userBudget').value || 'Not specified',
+        budget: budgetEl?.value || 'Not specified',
         email: email
       };
       
