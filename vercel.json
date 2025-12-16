@@ -4,6 +4,26 @@
     {
       "src": "src/server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "style.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "script.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "firebase-config.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "firebase-auth.js",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -12,8 +32,16 @@
       "dest": "src/server.js"
     },
     {
-      "src": "/(.*)",
+      "src": "/(.*\\.(js|css|html))",
       "dest": "/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
