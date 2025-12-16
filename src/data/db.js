@@ -1,12 +1,28 @@
 const fs = require('fs');
 const path = require('path');
 
+// Default data for Vercel deployment
+const defaultExperts = [
+  {"id":1,"name":"Rajesh Kumar","category":"Electrical","city":"Mumbai, Maharashtra","rating":4.9,"rate":"₹500–800/hr","experience":"15+ years","bio":"Expert electrician specializing in residential and commercial wiring, switchboard installation, and lighting solutions."},
+  {"id":2,"name":"Amit Singh","category":"Mechanical","city":"Delhi, NCR","rating":4.8,"rate":"₹600–900/hr","experience":"12+ years","bio":"Skilled mechanical engineer with expertise in HVAC systems, machinery repair, and industrial equipment maintenance."},
+  {"id":3,"name":"Suresh Reddy","category":"Civil","city":"Bangalore, Karnataka","rating":4.9,"rate":"₹550–850/hr","experience":"18+ years","bio":"Experienced civil contractor specializing in construction, renovation, waterproofing, and structural repairs."},
+  {"id":4,"name":"Priya Sharma","category":"Electrical","city":"Pune, Maharashtra","rating":4.7,"rate":"₹700–1000/hr","experience":"10+ years","bio":"Certified electrical engineer focusing on smart home automation, solar installations, and energy-efficient solutions."},
+  {"id":5,"name":"Vikram Patel","category":"Electronics","city":"Ahmedabad, Gujarat","rating":4.8,"rate":"₹800–1200/hr","experience":"14+ years","bio":"Electronics repair specialist with expertise in laptops, smartphones, tablets, and computer hardware troubleshooting."},
+  {"id":6,"name":"Arjun Mehta","category":"Plumbing","city":"Chennai, Tamil Nadu","rating":4.9,"rate":"₹650–950/hr","experience":"16+ years","bio":"Licensed plumber with comprehensive knowledge of pipe fitting, leak detection, drainage systems, and bathroom fixtures."},
+  {"id":7,"name":"Deepak Yadav","category":"Plumbing","city":"Hyderabad, Telangana","rating":4.6,"rate":"₹500–750/hr","experience":"8+ years","bio":"Professional plumber specializing in kitchen and bathroom installations, water heater repairs, and pipeline maintenance."},
+  {"id":8,"name":"Kavita Desai","category":"Appliance","city":"Jaipur, Rajasthan","rating":4.8,"rate":"₹600–900/hr","experience":"11+ years","bio":"Home appliance repair expert for AC, refrigerators, washing machines, microwave ovens, and kitchen appliances."},
+  {"id":9,"name":"Anita Reddy","category":"Appliance","city":"Kochi, Kerala","rating":4.7,"rate":"₹550–800/hr","experience":"9+ years","bio":"Appliance technician with expertise in air conditioner servicing, refrigerator repair, and home appliance maintenance."},
+  {"id":10,"name":"Rahul Verma","category":"Civil","city":"Lucknow, Uttar Pradesh","rating":4.9,"rate":"₹700–1100/hr","experience":"20+ years","bio":"Senior civil engineer specializing in building construction, interior design, flooring, and complete home renovation projects."},
+  {"id":11,"name":"Manish Joshi","category":"Mechanical","city":"Indore, Madhya Pradesh","rating":4.6,"rate":"₹550–850/hr","experience":"13+ years","bio":"Mechanical expert for car servicing, bike repairs, automotive diagnostics, and vehicle maintenance solutions."},
+  {"id":12,"name":"Sunita Nair","category":"Electronics","city":"Coimbatore, Tamil Nadu","rating":4.8,"rate":"₹650–950/hr","experience":"12+ years","bio":"Electronics technician specializing in TV repairs, home theatre systems, gaming consoles, and electronic gadget servicing."}
+];
+
 // In-memory storage for deployment (Vercel is read-only)
 let inMemoryStorage = {
-  'experts.json': require('./experts.json'),
-  'requests.json': require('./requests.json'),
-  'hires.json': require('./hires.json'),
-  'users.json': require('./users.json')
+  'experts.json': defaultExperts,
+  'requests.json': [],
+  'hires.json': [],
+  'users.json': []
 };
 
 function readJson(file) {
