@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "name": "Rajesh Kumar",
+    "category": "Electrical",
+    "city": "Mumbai, Maharashtra",
+    "rating": 4.9,
+    "rate": "₹500–800/hr"
+  },
+  {
+    "id": 2,
+    "name": "Amit Singh",
+    "category": "Mechanical",
+    "city": "Delhi, NCR",
+    "rating": 4.8,
+    "rate": "₹600–900/hr"
+  },
+  {
+    "id": 3,
+    "name": "Suresh Reddy",
+    "category": "Civil",
+    "city": "Bangalore, Karnataka",
+    "rating": 4.9,
+    "rate": "₹550–850/hr"
+  },
+  {
+    "id": 4,
+    "name": "Priya Sharma",
+    "category": "Electrical",
+    "city": "Pune, Maharashtra",
+    "rating": 4.7,
+    "rate": "₹700–1000/hr"
+  },
+  {
+    "id": 5,
+    "name": "Vikram Patel",
+    "category": "Civil",
+    "city": "Ahmedabad, Gujarat",
+    "rating": 4.8,
+    "rate": "₹800–1200/hr"
+  },
+  {
+    "id": 6,
+    "name": "Arjun Mehta",
+    "category": "Mechanical",
+    "city": "Chennai, Tamil Nadu",
+    "rating": 4.9,
+    "rate": "₹650–950/hr"
+  },
+  {
+    "id": 7,
+    "name": "Test Expert Manual",
+    "category": "Electrical",
+    "city": "Test City",
+    "rating": 0,
+    "rate": "₹500/hr",
+    "email": "test@test.com",
+    "phone": "1234567890",
+    "experience": "5+ years",
+    "bio": "Test expert added manually",
+    "registeredAt": "2025-12-02T15:00:01.010Z"
+  },
+  {
+    "id": 8,
+    "name": "hariraj ",
+    "category": "Civil",
+    "city": "Deoria",
+    "rating": 0,
+    "rate": "₹400/hr",
+    "email": "hariraj@gmail.com",
+    "phone": "+919120270897",
+    "experience": "3-5",
+    "bio": "i am a software developer.",
+    "registeredAt": "2025-12-02T15:09:46.288Z"
+  },
+  {
+    "id": 9,
+    "name": "aman",
+    "category": "Mechanical",
+    "city": "Deoria",
+    "rating": 0,
+    "rate": "₹500/hr",
+    "email": "aman@gmail.com",
+    "phone": "+919120270897",
+    "experience": "3-5",
+    "bio": "thi is show where the data saved",
+    "registeredAt": "2025-12-03T04:59:41.104Z"
+  }
+]

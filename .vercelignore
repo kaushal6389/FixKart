@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+.DS_Store
+*.log
+.env
+.env.local
+FIX_REPORT.txt
+PROJECT_ANALYSIS.md
+FIREBASE_SETUP.md
+FIREBASE_SETUP_HINDI.md
+script-fixed.js
