@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const serviceTypeEl = document.getElementById('serviceType');
       const descriptionEl = document.getElementById('projectDescription');
       const locationEl = document.getElementById('userLocation');
-      const emailEl = document.getElementById('userEmail');
+      const emailEl = document.getElementById('requestEmail');
       const budgetEl = document.getElementById('userBudget');
       
       console.log('Elements found:', {
