@@ -8,28 +8,56 @@ router.get('/', (_req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { title, description, location, date, category, photos } = req.body;
+  console.log('=== New Request Received ===');
+  console.log('Request body:', req.body);
+  
+  const { title, description, location, category, budget, email } = req.body;
 
-  if (!title || !description || !location || !category) {
-    return res.status(400).json({ error: 'Missing required fields' });
+  // Validation
+  if (!category || !description || !location || !email) {
+    console.log('Validation failed - missing fields');
+    return res.status(400).json({ 
+      success: false, 
+      error: 'Missing required fields',
+      message: 'Please fill in all required fields'
+    });
   }
 
-  const requests = readJson('requests.json');
-  const newReq = {
-    id: Date.now(),
-    title,
-    description,
-    location,
-    date: date || null,
-    category,
-    photos: photos || [],
-    status: 'pending',
-    createdAt: new Date().toISOString(),
-  };
+  try {
+    const requests = readJson('requests.json');
+    
+    const newRequest = {
+      id: Date.now(),
+      title: title || `${category} Service Required`,
+      description,
+      location,
+      category,
+      budget: budget || 'Not specified',
+      email,
+      status: 'pending',
+      createdAt: new Date().toISOString(),
+    };
 
-  requests.push(newReq);
-  writeJson('requests.json', requests);
-  res.status(201).json(newReq);
+    console.log('New request created:', newRequest);
+    
+    requests.push(newRequest);
+    writeJson('requests.json', requests);
+    
+    console.log('Request saved successfully');
+    
+    res.status(201).json({ 
+      success: true, 
+      message: 'Request posted successfully',
+      request: newRequest
+    });
+  } catch (error) {
+    console.error('Error saving request:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Server error',
+      message: 'Failed to save request: ' + error.message
+    });
+  }
 });
 
 module.exports = router;
