@@ -1,23 +1,72 @@
 [
   {
-    "id": 1764691442277,
-    "title": "electrical",
-    "description": "i worked as electrician",
-    "location": "deoria",
-    "date": "2018-02-02",
-    "category": "Electrical Services",
-    "photos": [],
+    "id": 1734691442277,
+    "title": "Electrical Service Required",
+    "description": "Need urgent electrical wiring work for new 3BHK flat. Complete rewiring needed including switchboard installation and lighting fixtures.",
+    "location": "Andheri West, Mumbai",
+    "category": "Electrical",
+    "budget": "₹25,000",
+    "email": "raj.patel@email.com",
     "status": "pending",
-    "createdAt": "2025-12-02T16:04:02.277Z"
+    "createdAt": "2025-12-10T10:30:00.000Z"
   },
   {
-    "id": 1764737888519,
-    "title": "plumbing",
-    "description": "i this is kaushal show .",
-    "location": "mainpuri",
-    "date": "2025-12-18",
-    "category": "Civil Services",
-    "photos": [],
+    "id": 1734737888519,
+    "title": "Plumbing Service Required",
+    "description": "Kitchen sink and bathroom pipes need repair. Water leakage issue in main pipeline. Need experienced plumber.",
+    "location": "Sector 18, Noida",
+    "category": "Plumbing",
+    "budget": "₹8,000",
+    "email": "amit.sharma@email.com",
+    "status": "pending",
+    "createdAt": "2025-12-11T14:20:00.000Z"
+  },
+  {
+    "id": 1734800000000,
+    "title": "AC Repair Service Required",
+    "description": "Split AC not cooling properly. Compressor making noise. Need technician for inspection and repair.",
+    "location": "Koramangala, Bangalore",
+    "category": "Appliance",
+    "budget": "₹5,000",
+    "email": "priya.reddy@email.com",
+    "status": "pending",
+    "createdAt": "2025-12-12T09:15:00.000Z"
+  },
+  {
+    "id": 1734850000000,
+    "title": "Laptop Repair Service Required",
+    "description": "Laptop screen broken and keyboard not working. Need laptop repair expert urgently for my work laptop.",
+    "location": "Baner, Pune",
+    "category": "Electronics",
+    "budget": "₹12,000",
+    "email": "vikram.mehta@email.com",
+    "status": "pending",
+    "createdAt": "2025-12-13T16:45:00.000Z"
+  },
+  {
+    "id": 1734900000000,
+    "title": "Home Painting Service Required",
+    "description": "Complete house painting needed for 2BHK apartment. Interior walls, ceiling and exterior work required.",
+    "location": "Dwarka, Delhi",
+    "category": "Civil",
+    "budget": "₹35,000",
+    "email": "sunita.singh@email.com",
+    "status": "pending",
+    "createdAt": "2025-12-14T11:00:00.000Z"
+  },
+  {
+    "id": 1734950000000,
+    "title": "Car AC Service Required",
+    "description": "Car air conditioning not working. Need car AC repair specialist. Maruti Swift 2019 model.",
+    "location": "Whitefield, Bangalore",
+    "category": "Mechanical",
+    "budget": "₹6,500",
+    "email": "rahul.kumar@email.com",
+    "status": "pending",
+    "createdAt": "2025-12-15T08:30:00.000Z"
+  }
+]
+
     "status": "pending",
     "createdAt": "2025-12-03T04:58:08.519Z"
   },
